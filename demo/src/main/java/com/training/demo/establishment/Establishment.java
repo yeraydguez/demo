@@ -6,11 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.training.demo.client.Client;
 import com.training.demo.tablet.Tablet;
 
 
@@ -44,6 +46,10 @@ public class Establishment {
     @OneToOne
 	@JoinColumn(name = "tablets_idtablets")
 	private Tablet tablet;
+    
+    @ManyToOne
+	@JoinColumn(name = "clients_idclients")
+	private Client client;
 
 	public Integer getId() {
 		return id;
@@ -100,8 +106,14 @@ public class Establishment {
 	public void setTablet(Tablet tablet) {
 		this.tablet = tablet;
 	}
-    
-    
-    
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+            
 }
 
