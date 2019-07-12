@@ -108,12 +108,6 @@ public class Client {
 	public void setBankAccount(String bankAccount) {
 		this.bankAccount = bankAccount;
 	}
-
-	@Override
-	public String toString() {
-		return "Client [name=" + name + ", surname1=" + surname1 + "]";
-	}
-
     
 }
 
